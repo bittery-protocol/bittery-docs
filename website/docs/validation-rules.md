@@ -34,8 +34,8 @@ Validation operates on the candidate bet set produced by indexers and verified a
 5. **Double-spend check**: Ensure inputs funding the payout transaction are unspent at time of broadcast.
 
 ## Data Structures
-- `ValidatedBet`: {txid, vout, amount, ticket_count, payload}
-- `RoundContext`: {bii, eligible_bets, block_hash_seed, vrf_output}
+- `ValidatedBet`: `{txid, vout, amount, ticket_count, payload}`
+- `RoundContext`: `{bii, eligible_bets, block_hash_seed, vrf_output}`
 
 ## Rationale
 Applying strict validation at the ICP layer ensures the protocol remains stateless and reproducible. Replay and duplication checks prevent inflation of ticket counts, while block-based constraints tie eligibility to immutable chain history.
