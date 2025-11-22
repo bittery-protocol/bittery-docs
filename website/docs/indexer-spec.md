@@ -63,7 +63,7 @@ Each bet entry in `bets.json` MUST include:
 - `cbor_hex` (hex string)
 
 ## Data Structures
-- `CandidateBet`: {txid, vout, amount, block_height, payload, ticket_count}
+- `CandidateBet`: `{txid, vout, amount, block_height, payload, ticket_count}`
 - `IndexerMerkleTree`: Merkle tree over `CandidateBet` serialization for consensus.
 
 ## Validation
