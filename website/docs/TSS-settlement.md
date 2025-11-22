@@ -58,8 +58,8 @@ Fee: 0.00000000 BTC (for illustration)
 ```
 
 ## Data Structures
-- `PayoutPlan`: {inputs, outputs[], fee, rollover_target, change_address}
-- `TSSSignatureBundle`: {participants[], threshold, aggregated_signature}
+- `PayoutPlan`: `{inputs, outputs[], fee, rollover_target, change_address}`
+- `TSSSignatureBundle`: `{participants[], threshold, aggregated_signature}`
 
 ## Validation
 1. Verify all inputs belong to `prize_pool_address` or prior rollover outputs.
