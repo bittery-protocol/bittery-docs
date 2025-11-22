@@ -1,0 +1,39 @@
+# Bittery Protocol Docs — LLM Guide
+
+Base URL: https://docs.bittery.dev/
+Repo: https://github.com/bittery-protocol/bittery-docs
+
+Use these links to fetch authoritative Markdown/MDX pages. Prefer HTTPS GET on the listed path (they render static HTML).
+
+## Core Overview
+- [Intro](/intro): High-level Bittery architecture and layered approach.
+- [Protocol Overview](/protocol-overview): Detailed flow from bet intake to payouts.
+- [Architecture](/architecture): Component diagram across Bitcoin, Ordinals, ICP, TSS.
+
+## Specifications
+- [BII Spec](/BII-spec): Bittery Issuance Inscription JSON schema.
+- [BTRY Payload](/BTRY-payload): OP_RETURN CBOR map definitions.
+- [Round Lifecycle](/round-lifecycle): State machine and transition triggers.
+- [Indexer Spec](/indexer-spec): Chain scanning, candidate bet formation, consensus.
+- [Validation Rules](/validation-rules): ICP final judge verification logic.
+- [VRF & Entropy](/VRF-spec): Randomness inputs, outputs, and mapping.
+- [TSS Settlement](/TSS-settlement): Threshold signing and payout assembly.
+
+## Security & Storage
+- [Security Model](/security-model): Threat model, trust assumptions, mitigations.
+- [Storage Model](/storage-model): On-chain/off-chain records and reproducibility.
+
+## Reference & Contributor Guides
+- [Repository Guidelines](https://raw.githubusercontent.com/bittery-protocol/bittery-docs/main/AGENTS.md): Contributor expectations, commands, style.
+- [Repo README](https://raw.githubusercontent.com/bittery-protocol/bittery-docs/main/README.md): Project setup instructions (Node/pnpm, dev server).
+
+## BLIP Proposals
+- [BLIP-001 — BII](/blip/BLIP-001-BII)
+- [BLIP-002 — BTRY](/blip/BLIP-002-BTRY)
+- [BLIP-003 — Indexer Consensus](/blip/BLIP-003-IndexerConsensus)
+
+## Usage Notes for LLMs
+- Follow the Table of Contents to avoid crawling unrelated assets.
+- Pages return static HTML; extract body content between `<article>` tags.
+- Cite the final URL (e.g., https://docs.bittery.dev/indexer-spec) when referencing.
+- For historical changes, consult the GitHub repo via the editUrl links on each page.
