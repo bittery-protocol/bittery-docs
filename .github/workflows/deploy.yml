@@ -7,13 +7,29 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: npm
-      - run: cd website && npm install && npm run build
+          cache-dependency-path: website/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd website
+          npm ci
+
+      - name: Build website
+        run: |
+          cd website
+          npm run build
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
