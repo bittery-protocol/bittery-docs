@@ -28,8 +28,8 @@ A formal security model clarifies what each component must guarantee and how the
 - ICP stores VRF outputs, payout transactions, and state transitions to provide a verifiable audit trail.
 
 ## Data Structures
-- `AuditRecord`: {round_id, bii_hash, candidate_bets_root, vrf_output, payout_txid}
-- `SecurityConfig`: {k_confirm, max_op_return_size, tss_threshold}
+- `AuditRecord`: `{round_id, bii_hash, candidate_bets_root, vrf_output, payout_txid}`
+- `SecurityConfig`: `{k_confirm, max_op_return_size, tss_threshold}`
 
 ## Validation
 Security-critical validations include:
