@@ -52,8 +52,8 @@ red    = (R64 >> 40) mod 26
 This mapping is non-authoritative for payouts but provides a reproducible representation.
 
 ## Data Structures
-- `VRFInput`: {round_id, end_block_height, end_block_hash, k_confirm, raw_rand_opt, commit_reveal_transcript}
-- `VRFOutput`: {R64, proof}
+- `VRFInput`: `{round_id, end_block_height, end_block_hash, k_confirm, raw_rand_opt, commit_reveal_transcript}`
+- `VRFOutput`: `{R64, proof}`
 
 ## Validation
 1. Verify the VRF proof against the public key and message `M`.

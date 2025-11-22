@@ -47,7 +47,7 @@ stateDiagram-v2
 ```
 
 ## Data Structures
-- `RoundState`: {state, round_id, last_block_seen, k_confirm, vrf_seed, payout_txid}
+- `RoundState`: `{state, round_id, last_block_seen, k_confirm, vrf_seed, payout_txid}`
 - `BetLedger`: ordered list of eligible bets as of CLOSED, recomputed on reorg.
 
 ## Validation
