@@ -1,23 +1,63 @@
 # Bittery Protocol
 
-Bitcoin records value, but it does not coordinate people. That limitation makes lotteries feel out of place on Bitcoin: a lottery is a social ritual where rules are published, people respond, and the outcome must be beyond dispute. Bitcoin handles the money; everything else traditionally lives elsewhere.
+Bitcoin is very good at keeping value and very limited at everything else.  
+It does not run logic, it does not coordinate groups, and it does not settle disputes.  
+It simply records what happened.  
+For a long time this made lotteries on Bitcoin feel strangely incomplete—money could move on-chain, but the structure around it always had to sit somewhere else, usually in the hands of an operator people had no choice but to trust.
 
-Inscriptions let people anchor art, messages, and identity to satoshis. They provide permanence, not participation. Most inscriptions sit quietly after minting and do little to change the creator’s life unless markets keep trading them.
+The arrival of Ordinals and Atomicals changed how people thought about Bitcoin data.  
+Suddenly, a satoshi could carry meaning because someone had inscribed that meaning onto it.  
+Art, text, identity, all pinned directly to a place in the ledger.  
+It gave creators permanence, but permanence alone didn’t help them very much.  
+Most inscriptions sit quietly after they are minted; unless a market keeps trading them, there is no ongoing participation, no recurring moment that brings creator and audience back together.
 
-Lotteries are different. A ticket marks an event and a shared moment. People keep tickets long after the draw because a ticket carries a memory, not just a price.
+Lotteries work differently.  
+A lottery round is not just a prize—it is an event.  
+People remember where they were when they joined, which ticket they held, and what the artwork on it looked like.  
+Old lottery stubs are kept for years after the draw, not because they might be sold, but because they mark a moment that meant something.  
+Bittery tries to bring that feeling onto Bitcoin in a way that fits naturally with how Bitcoin works.
 
-Bittery makes that ritual native to Bitcoin. A round is a small on-chain document—an inscription anyone can read. A ticket is a Bitcoin transaction that carries just enough structured data for the round to recognize it. Rules are data. Entries are data. Bitcoin stores them without opinion, so anyone can reconstruct a round directly from the chain.
+A round on Bittery is simply an inscription.  
+It is a small document written to the chain that describes when the round begins, how it behaves, and what counts as a valid entry.  
+Once written, it does not move or change; everyone shares the same starting point.  
+A ticket is just a Bitcoin transaction that contains a short CBOR payload inside OP_RETURN.  
+People who understand Ordinals or Atomicals will recognize the idea immediately:  
+those systems attach meaning to a satoshi, and here the meaning is attached to the transaction itself.  
+Nothing off-chain has to confirm it.  
+Anyone reading the chain can see what round the ticket belongs to.
 
-Once rules and entries are data, any system that can read Bitcoin can execute: from simple scripts to verifiable randomness and threshold signatures; from clustered services to a single machine. Bittery does not dictate the machinery—only what must be true when the chain is interpreted. Execution stays off-chain, so no one is locked to a specific operator. Anyone can issue a round, implement a validator, and reproduce outcomes. The inscription fixes the rules once the round begins.
+When rules and entries live on the chain, the rest becomes open territory.  
+Different people can build different engines to actually run the round.  
+One engine might perform a straightforward scan and compute a winner.  
+Another might use verifiable randomness and threshold-signed payouts.  
+Someone else might write a minimal script for private use.  
+Bittery doesn’t decide how these engines should work; it only anchors the parts that must be shared—what the round says, what the tickets say, and how to check them against each other.
 
-For artists, the artwork becomes the face of a round—the image tied to that specific moment. Tickets are artifacts bound to that art and event, not just claims on payout. Art returns to being part of a shared experience instead of a speculative asset.
+This also gives artists a clearer place in the process.  
+Instead of producing content that waits for speculative trading, they create the visual identity of a round.  
+Their work becomes part of the event itself.  
+When someone participates, they aren’t just buying a chance at a payout; they are creating a record tied to that artwork, a small artifact of a specific moment.  
+It shifts the focus from price to presence.
 
-Bittery is not an economic engine; it is a clean way to express rounds, entries, outcomes, and artifacts so anyone can participate without permission and verify without trust. Bitcoin does what it already does well, and people choose how to build on top.
+Bittery stays intentionally small.  
+It isn’t a platform or a service.  
+It doesn’t manage users or hold funds or promise to stay online.  
+It describes a structure that anyone can adopt in their own way.  
+The inscription fixes the rules, the transaction declares the entry, and everything else—verification, execution, payout—can be built and rebuilt by whoever needs it.
 
 ## Why Bittery Is a Protocol
 
-Bittery is written as a protocol rather than an application for a simple reason: the useful parts of a lottery—its rules, its entries, and its outcome—should not belong to any particular operator.
+Bittery is a protocol because the parts that matter should not belong to anyone.  
+Applications disappear when their operators move on; a protocol continues as long as people can read and interpret it.  
+If the round description is on Bitcoin and the entries are on Bitcoin, the outcome can be reproduced by anyone who looks.  
+No website has to survive for the system to make sense.
 
-An application comes and goes with the person who runs it. A protocol does not. If the round description is on Bitcoin and the entries are on Bitcoin, then anyone can build a tool that interprets them, and anyone can reproduce the result without relying on the original issuer. Nothing about the system depends on a website, an interface, or a company staying alive.
+By limiting itself to formats and rules, Bittery avoids becoming a product.  
+It leaves room for many implementations, each with its own assumptions and trade-offs.  
+What ties them together is the chain itself.  
+If the data matches the rules, the result is valid.  
+If it doesn’t, it isn’t.  
+Nothing else has authority.
 
-By keeping Bittery at the level of formats and rules, the work can be carried on by whoever finds it useful. One implementation may use a sophisticated execution engine; another may use something much simpler. What matters is that the data on the chain is enough for all of them to agree on what happened. The protocol exists so that no one needs permission to issue a round, and no one needs trust to verify one.
+The protocol exists so that issuing a round never requires permission,  
+and verifying a round never requires trust.
